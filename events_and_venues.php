@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Events And Venues
-Plugin URI: 
-Description: 
-Author: 
-Version: 
-Author URI: 
+Plugin URI: https://github.com/awgreenblatt/events-and-venues
+Description: Example REST interface and shortcode that makes use of the interface
+Author: Alan Greenblatt
+Version: 1.0
+Author URI: http://blattchat.com
 */
 
 register_activation_hook(__FILE__, 'events_and_venues_activate');
