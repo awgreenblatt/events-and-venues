@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Events And Venues
-Plugin URI: https://github.com/awgreenblatt/events-and-venues
-Description: Example REST interface and shortcode that makes use of the interface
-Author: Alan Greenblatt
-Version: 1.0
-Author URI: http://blattchat.com
+Plugin URI: 
+Description: 
+Author: 
+Version: 
+Author URI: 
 */
 
 register_activation_hook(__FILE__, 'events_and_venues_activate');
@@ -25,6 +25,7 @@ function events_and_venues_deactivate() {
 
 add_action('init', 'register_events_and_venue_scripts');
 function register_events_and_venue_scripts() {
+	error_log('register_events_and_venue_scripts()');
     wp_register_script('ev-ui', plugins_url('ev-ui.js', __FILE__), array(), false, true);
 
     wp_localize_script('ev-ui', 'EVUIEnv', array(

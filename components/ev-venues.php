@@ -17,14 +17,14 @@ function ev_enqueue_venues_scripts() {
 
     /* Test if the 'ev-venues' shortcode exists on the page first */
     if ($ev_add_venues_scripts) {
-        wp_enqueue_script('ev-venue-model', plugins_url('js/models/venue-model.js', __FILE__),
-            array('backbone', 'underscore'), false, true);
-        wp_enqueue_script('ev-venue-list-view', plugins_url('js/views/venue-list.js', __FILE__),
-            array('ev-ui', 'jquery', 'backbone', 'underscore'), false, true);
-        wp_enqueue_script('ev-venue-details-view', plugins_url('js/views/venue-details.js', __FILE__),
-            array('ev-ui', 'jquery', 'backbone', 'underscore'), false, true);
-        wp_enqueue_script('ev-venues', plugins_url('js/venues-app.js', __FILE__),
-            array('ev-venue-model', 'ev-venue-list-view', 'ev-venue-details-view'), false, true);
-    }
+	    wp_enqueue_script('ev-venue-model', plugins_url('js/models/venue-model.js', __FILE__),
+			array('backbone', 'underscore'), false, true);
+	    wp_enqueue_script('ev-venue-list-view', plugins_url('js/views/venue-list.js', __FILE__),
+			array('ev-ui', 'jquery', 'backbone', 'underscore'), false, true);
+	    wp_enqueue_script('ev-venue-details-view', plugins_url('js/views/venue-details.js', __FILE__),
+			array('ev-ui', 'jquery', 'backbone', 'underscore'), false, true);
+	    wp_enqueue_script('ev-venues', plugins_url('js/venues-app.js', __FILE__),
+			array('ev-venue-model', 'ev-venue-list-view', 'ev-venue-details-view'), false, true);
+	}
 }
 ?>

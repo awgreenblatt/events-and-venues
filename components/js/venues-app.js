@@ -9,6 +9,10 @@ var AppRouter = Backbone.Router.extend({
 	},
 
 	listVenues: function(callback) {
+		console.log('listVenues()');
+		if (this.currentView)
+        	this.currentView.close();
+
 		if (!this.venueList) {
 			this.venueList = new VenueCollection();
 			var that = this;

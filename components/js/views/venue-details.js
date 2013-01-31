@@ -11,7 +11,8 @@ window.VenueDetailsView = Backbone.View.extend({
 
 	events: {
 		"click .save": "saveVenue",
-		"click .delete": "deleteVenue"
+		"click .delete": "deleteVenue",
+		"click .close": "closeVenue"
 	},
 
 	saveVenue: function() {
@@ -32,7 +33,7 @@ window.VenueDetailsView = Backbone.View.extend({
 			var that = this;
 			app.venueList.create(this.model, {
 				success: function(model, response) {
-					app.navigate('venues/' + model.id, false);
+					app.navigate('venues/' + model.id, {trigger: false});
 				},
 				wait: true
 			});
@@ -43,6 +44,11 @@ window.VenueDetailsView = Backbone.View.extend({
 		return false;
 	},
 
+	closeVenue: function() {
+		app.navigate('', {trigger: false});
+		this.close();
+	},
+
 	deleteVenue: function() {
 		var that = this;
 
@@ -50,10 +56,10 @@ window.VenueDetailsView = Backbone.View.extend({
 			function(data, status, xhr) {
 				var can_delete = data.msg;
 				if (can_delete) {
-					this.model.destroy({
+					that.model.destroy({
 						success: function() {
-							app.navigate('', false);
-							self.close();
+							app.navigate('', {trigger: false});
+							that.close();
 						}
 					});
 				} else {
